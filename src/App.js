@@ -45,7 +45,7 @@ function App() {
   const identify = async () => {
     textInputRef.current.value = "";
     const image = tf.browser.fromPixels(imageRef.current, 1);
-    const resized_image = tf.image.resizeBilinear(image, [200, 2]);
+    const resized_image = tf.image.resizeBilinear(image, [200, 200]);
     const prediction = await model.predict(
       resized_image.reshape([1, 200, 200, 1])
     );
